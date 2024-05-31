@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <title>Blood Bank Management</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    .footer{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+          <a class="navbar-brand" href="/">Blood Bank Management</a>
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="nav navbar-nav ">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inventory
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/stock">Stock</a>
+                    <a class="dropdown-item" href="/camp">Camp</a>
+                    <a class="dropdown-item" href="/employee">Employee</a>
+                  </div>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/acceptor">Acceptor</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"  href="/donor">Donor</a>
+            </li>
+          </ul>
+          </div>
+      </nav>
+
+      <h3 class="text-center mt-2">Thanks for Saving Lives</h3>
+    <div class="jumbotron"  style="padding:40px;">
+      <form action = "http://localhost:5000/donor" method = "post">
+        <div class="form-group row">
+          <label for="inputDonorId" class="col-sm-2 col-form-label">Donor Id</label>
+          <div class="col-sm-10">
+            <input type="donorid" name="donorid" class="form-control" id="inputDonorId" placeholder="Donor Id">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="name" name="donorName" class="form-control" id="inputName" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputContact" class="col-sm-2 col-form-label">Contact</label>
+          <div class="col-sm-10">
+            <input type="contact" name="donorContact" class="form-control" id="inputContact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
+          <div class="col-sm-10">
+            <input type="age" name="donorAge" class="form-control" id="inputAge" placeholder="Age">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputSex" class="col-sm-2 col-form-label">Sex</label>
+          <div class="col-sm-10">
+            <input type="sex" name="donorSex" class="form-control" id="inputSex" placeholder="Sex">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputBloodgrp" class="col-sm-2 col-form-label">Blood group</label>
+          <div class="col-sm-10">
+            <input type="bloodgrp" name="donorBloodGrp" class="form-control" id="inputBloodgrp" placeholder="Blood group">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputWeight" class="col-sm-2 col-form-label">Weight</label>
+          <div class="col-sm-10">
+            <input type="weight" name="donorWt" class="form-control" id="inputWeight" placeholder="Weight">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% if data is defined %}
+          <p>{{data}}</p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html> 
